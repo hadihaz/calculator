@@ -130,9 +130,18 @@ function control(char, type) {
 
 function sign() {
     if (flag == 1) {
-        num1 = '-' + num1;
+        if (num1[0] == '-') {
+            num1 = num1.slice(1);
+        } else {
+            num1 = '-' + num1;
+        }
     } else if (flag == 0) {
-        num2 = '-' + num2;
+        if (num2[0] == '-') {
+            num2 = num2.slice(1)
+        } else {
+            num2 = '-' + num2;
+        }
+
     }
     changeDisplay()
 }
@@ -141,7 +150,7 @@ const add = (n, m) => { return parseFloat((n + m).toFixed(3)) }
 const subtract = (n, m) => { return parseFloat((n - m).toFixed(3)) }
 const multiply = (n, m) => { return parseFloat((n * m).toFixed(3)) }
 const divide = (n, m) => { return parseFloat((n / m).toFixed(3)) }
-const remainder = (n, m) => {return parseFloat((n % m).toFixed(3)) }
+const remainder = (n, m) => { return parseFloat((n % m).toFixed(3)) }
 
 
 function changeDisplay() {
